@@ -1,0 +1,27 @@
+{
+  "name": "ngx-drf-jwt-auth",
+  "version": "0.0.1",
+  "description": "A Angular 5+ module for JWT token and auth management focused to work with Django REST Framework JWT implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwitab/ngx-drf-jwt-auth.git"
+  },
+  "keywords": [
+    "Django",
+    "Rest",
+    "Framework",
+    "Django",
+    "JWT",
+    "Angular"
+  ],
+  "author": "Henrik Palmlund Wahlgren",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/pwitab/ngx-drf-jwt-auth/issues"
+  },
+  "homepage": "https://github.com/pwitab/ngx-drf-jwt-auth#readme"
+}
