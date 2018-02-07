@@ -1,17 +1,17 @@
 import {ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
-
-import {DRFJWTLoginFormComponent} from './loginform.component';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
-import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './drf-jwt-auth.options';
-import {DrfJwtAuthInterceptor} from './drf-jwt-auth.interceptor';
-import {CanActivateIfAuthenticated} from './drf-jwt-auth.guard.service';
-import {DRFJWTAuthService} from './drf-jwt-auth.service';
 import {EffectsModule} from '@ngrx/effects';
 import {DRFJWTAuthEffects} from './store/effects';
 import {StoreModule} from '@ngrx/store';
-import {authReducer} from './store/reducers';
+
+import {DRFJWTLoginFormComponent} from './src/components/loginform.component';
+import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './src/options';
+import {DrfJwtAuthInterceptor} from './src/auth.interceptor';
+import {CanActivateIfAuthenticated} from './src/guard.service';
+import {DRFJWTAuthService} from './src/auth.service';
+import {authReducer} from './src/store/reducers';
 
 @NgModule({
   declarations: [DRFJWTLoginFormComponent],

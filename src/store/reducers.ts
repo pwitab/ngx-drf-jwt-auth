@@ -1,6 +1,7 @@
+import {createFeatureSelector} from '@ngrx/store';
+
 import {DRFJWTAuthActions, DRFJWTAuthActionTypes} from './actions';
 import {JWT} from '../jwt'
-import {createFeatureSelector} from '@ngrx/store';
 
 //TODO: is it possible to register state in the module using StoreModule.forFeature().
 

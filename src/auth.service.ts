@@ -1,6 +1,6 @@
 import {Inject, Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders,} from '@angular/common/http';
-import {Credentials} from './drf-jwt-auth.models';
+import {Credentials} from './models';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/do';
@@ -9,7 +9,7 @@ import {JWT} from './jwt';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app/state'
 import {Subscription} from 'rxjs/Subscription';
-import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './drf-jwt-auth.options';
+import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './options';
 import {selectAuthState} from './store/reducers';
 
 export interface TokenResponse {

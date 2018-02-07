@@ -1,22 +1,23 @@
 import {Inject, Injectable} from '@angular/core';
-import {Effect, Actions} from '@ngrx/effects';
-import { Action } from '@ngrx/store';
+import {Router} from '@angular/router';
 import { Observable } from 'rxjs';
 import { of } from 'rxjs/observable/of';
 import {map, take, switchMap, catchError, withLatestFrom, tap} from 'rxjs/operators';
-import * as DRFJWTAuthActions from './actions';
-
-import {Router} from '@angular/router';
-import {DRFJWTAuthService} from '../drf-jwt-auth.service';
-import {Credentials} from '../drf-jwt-auth.models';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/map';
 
-import {JWT} from '../jwt';
+import {Effect, Actions} from '@ngrx/effects';
+import { Action } from '@ngrx/store';
 import {Store} from '@ngrx/store';
-import {AppState} from '../../../app/state'
-import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from '../drf-jwt-auth.options';
 import {ROUTER_NAVIGATION} from '@ngrx/router-store';
+
+
+import {AppState} from '../../../app/state'
+import {DRFJWTAuthService} from '../auth.service';
+import {JWT} from '../jwt';
+import * as DRFJWTAuthActions from './actions';
+import {Credentials} from '../models';
+import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from '../options';
 import {RenewToken, SaveToken} from './actions';
 import {selectAuthState} from './reducers';
 

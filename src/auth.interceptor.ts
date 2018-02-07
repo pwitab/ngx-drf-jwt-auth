@@ -11,7 +11,7 @@ import 'rxjs/add/operator/catch';
 
 
 import {JWT} from './jwt';
-import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './drf-jwt-auth.options';
+import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './options';
 import {selectAuthState} from './store/reducers';
 
 @Injectable()

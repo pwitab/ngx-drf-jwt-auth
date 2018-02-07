@@ -2,13 +2,13 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import * as AppStore from '../../app/state';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {DRFJWTAuthService} from './drf-jwt-auth.service';
+import {DRFJWTAuthService} from './auth.service';
 import {Credentials} from './drf-jwt-auth.models';
 import * as Auth from './store/actions';
-import {JWT} from './jwt';
+import {JWT} from '../jwt';
 import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/operators/map';
-import {selectAuthState} from './store/reducers';
+import {selectAuthState} from '../store/reducers';
 
 
 const checkLoggedInJWT = map((jwt: JWT) => {

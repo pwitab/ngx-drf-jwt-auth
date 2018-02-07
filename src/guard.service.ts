@@ -3,7 +3,7 @@ import { CanActivate } from '@angular/router';
 import {Store} from '@ngrx/store';
 import {AppState} from '../../app/state';  // TODO: THis should be a derrived state.
 import {Go} from '../../app/state/router/actions';
-import {DRFJWTAuthService} from './drf-jwt-auth.service';
+import {DRFJWTAuthService} from './auth.service';
 
 @Injectable()
 export class CanActivateIfAuthenticated implements CanActivate {

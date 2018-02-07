@@ -1,5 +1,6 @@
 import { Action } from '@ngrx/store';
-import {Credentials} from '../drf-jwt-auth.models';
+
+import {Credentials} from '../models';
 import {JWT} from '../jwt';
 
 export enum DRFJWTAuthActionTypes {
