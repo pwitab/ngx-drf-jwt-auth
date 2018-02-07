@@ -101,10 +101,10 @@ export class DRFJWTLoginFormComponent {
   }
 
   signUpClicked() {
-    this.store.dispatch(new Auth.SignUp());
+    this.store.dispatch(new Auth.GoToSignUp());
   }
 
   forgottenPasswordClicked() {
-    this.store.dispatch(new Auth.ForgottenPassword());
+    this.store.dispatch(new Auth.GoToForgottenPassword());
   }
 }

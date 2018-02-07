@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CanActivate } from '@angular/router';
 import {Store} from '@ngrx/store';
-import {Go} from '../../app/state/router/actions';
 import {DRFJWTAuthService} from './auth.service';
 import {AuthState} from "./store/reducers";
+import {GoToSignIn} from "./store/actions";
 
 @Injectable()
 export class CanActivateIfAuthenticated implements CanActivate {
@@ -18,7 +18,7 @@ export class CanActivateIfAuthenticated implements CanActivate {
       return true
     }
     else {
-      this.store.dispatch(new Go({path: ['login']}));
+      this.store.dispatch(new GoToSignIn());
       return false
     }
   }

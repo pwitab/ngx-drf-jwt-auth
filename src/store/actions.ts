@@ -11,8 +11,9 @@ export enum DRFJWTAuthActionTypes {
   LogIn = '[DRF JWT Auth] LogIn',
   LogOut = '[DRF JWT Auth] LogOut',
   LogInSuccess = '[DRF JWT Auth] Login Success',
-  ForgottenPassword = '[DRF JWT Auth] Forgotten Password',
-  SignUp = '[DRF JWT Auth] SignUp',
+  GoToForgottenPassword = '[DRF JWT Auth] Go To Forgotten Password',
+  GoToSignUp = '[DRF JWT Auth] Go To SignUp',
+  GoToSignIn = '[DRF JWT Auth] Go To SignIn',
 
 }
 
@@ -58,13 +59,18 @@ export class AuthFail implements Action {
   constructor(public payload: string) {}
 }
 
-export class ForgottenPassword implements Action {
-  public readonly type = DRFJWTAuthActionTypes.ForgottenPassword;
+export class GoToForgottenPassword implements Action {
+  public readonly type = DRFJWTAuthActionTypes.GoToForgottenPassword;
 }
 
-export class SignUp implements Action {
-  public readonly type = DRFJWTAuthActionTypes.SignUp;
+export class GoToSignUp implements Action {
+  public readonly type = DRFJWTAuthActionTypes.GoToSignUp;
 }
+
+export class GoToSignIn implements Action {
+    public readonly type = DRFJWTAuthActionTypes.GoToSignIn;
+}
+
 
 export type DRFJWTAuthActions =
   | SaveToken
@@ -74,5 +80,6 @@ export type DRFJWTAuthActions =
   | LogIn
   | LogOut
   | LogInSuccess
-  | ForgottenPassword
-  | SignUp;
+  | GoToForgottenPassword
+  | GoToSignIn
+    | GoToSignUp;
