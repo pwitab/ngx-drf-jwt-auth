@@ -12,7 +12,7 @@ import 'rxjs/add/operator/catch';
 
 import {JWT} from './jwt';
 import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './options';
-import {selectAuthState} from './store/reducers';
+import {AuthState, selectAuthState} from './store/reducers';
 
 @Injectable()
 export class DrfJwtAuthInterceptor implements HttpInterceptor {
@@ -22,7 +22,7 @@ export class DrfJwtAuthInterceptor implements HttpInterceptor {
   public options: IDrfJwtAuthOptions;
 
   constructor(
-    private store: Store<AppState>,
+    private store: Store<AuthState>,
     @Inject(DRF_JWT_AUTH_OPTIONS) options: IDrfJwtAuthOptions){
 
     this.options = options;

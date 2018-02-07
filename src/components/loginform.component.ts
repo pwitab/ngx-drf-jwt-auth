@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
-import { Store } from '@ngrx/store';
-import * as AppStore from '../../app/state';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {DRFJWTAuthService} from './auth.service';
-import {Credentials} from './drf-jwt-auth.models';
-import * as Auth from './store/actions';
-import {JWT} from '../jwt';
+import { Store } from '@ngrx/store';
 import {Observable} from 'rxjs/Observable';
 import {map} from 'rxjs/operators/map';
-import {selectAuthState} from '../store/reducers';
 
+import {JWT} from '../jwt';
+import {AuthState, selectAuthState} from '../store/reducers';
+import * as Auth from '../store/actions';
+import {DRFJWTAuthService} from '../auth.service';
+import {Credentials} from '../models';
 
 const checkLoggedInJWT = map((jwt: JWT) => {
     if (jwt) {
@@ -66,7 +65,7 @@ export class DRFJWTLoginFormComponent {
   logged_in: Observable<boolean>;
 
 
-  constructor(private store: Store<AppStore.AppState>,
+  constructor(private store: Store<AuthState>,
               private authService: DRFJWTAuthService,
               private formBuilder: FormBuilder) {
 

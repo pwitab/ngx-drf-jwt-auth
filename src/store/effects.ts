@@ -12,14 +12,13 @@ import {Store} from '@ngrx/store';
 import {ROUTER_NAVIGATION} from '@ngrx/router-store';
 
 
-import {AppState} from '../../../app/state'
 import {DRFJWTAuthService} from '../auth.service';
 import {JWT} from '../jwt';
 import * as DRFJWTAuthActions from './actions';
 import {Credentials} from '../models';
 import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from '../options';
 import {RenewToken, SaveToken} from './actions';
-import {selectAuthState} from './reducers';
+import {AuthState, selectAuthState} from './reducers';
 
 // TODO: Can I register the effects outside of main application? Not in app.module.ts
 
@@ -31,7 +30,7 @@ export class DRFJWTAuthEffects {
     private actions$: Actions,
     private authService: DRFJWTAuthService,
     private router: Router,
-    private store: Store<AppState>,
+    private store: Store<AuthState>,
     @Inject(DRF_JWT_AUTH_OPTIONS) options: IDrfJwtAuthOptions) {
 
     this.options = options;

@@ -5,21 +5,25 @@ import {JWT} from '../jwt'
 
 //TODO: is it possible to register state in the module using StoreModule.forFeature().
 
-export const selectAuthState = createFeatureSelector<AuthState>('auth');
+export const selectAuthState = createFeatureSelector<State>('auth');
 
 export interface AuthState {
+  auth: State
+}
+
+export interface State {
   jwt: JWT;
   login_error: boolean
 }
 
-export function getInitialState() : AuthState {
+export function getInitialState() : State {
   return {
     jwt: null,
     login_error: false,
   }
 }
 
-export function authReducer(state: AuthState = getInitialState(), action: DRFJWTAuthActions): AuthState {
+export function authReducer(state: State = getInitialState(), action: DRFJWTAuthActions): State {
   switch (action.type) {
 
     // after we have gotten the token we need to save it in the state.
