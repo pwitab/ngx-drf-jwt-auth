@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {EffectsModule} from '@ngrx/effects';
-import {DRFJWTAuthEffects} from './store/effects';
+import {DRFJWTAuthEffects} from './src/store/effects';
 import {StoreModule} from '@ngrx/store';
 
 import {DRFJWTLoginFormComponent} from './src/components/loginform.component';

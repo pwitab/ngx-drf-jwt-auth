@@ -1,0 +1,23 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "quotemark": [true, "single"],
+    "ordered-imports": false,
+    "trailing-comma": false,
+    "no-trailing-whitespace": false,
+    "member-ordering": false,
+    "max-line-length": false,
+    "one-line": false,
+    "no-console": false,
+    "eofline": false,
+    "arrow-parens": false,
+    "no-empty": false,
+    "no-bitwise": false,
+    "object-literal-sort-keys": false,
+    "variable-name": [true, "allow-snake-case"],
+    "interface-name": false,
+    "max-classes-per-file": [
+      false
+    ]
+  }
+}

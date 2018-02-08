@@ -20,8 +20,6 @@ import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from '../options';
 import {RenewToken, SaveToken} from './actions';
 import {AuthState, selectAuthState} from './reducers';
 
-// TODO: Can I register the effects outside of main application? Not in app.module.ts
-
 @Injectable()
 export class DRFJWTAuthEffects {
   public options : IDrfJwtAuthOptions;
@@ -36,10 +34,6 @@ export class DRFJWTAuthEffects {
     this.options = options;
 
   }
-
-    //TODO: we want to be ables to specify the location of the store (define from above at init). Since everyone might not have the same setup
-
-
 
   /**
    * When getting a token we need to get the user and password and request a new token from the server and save it to the state

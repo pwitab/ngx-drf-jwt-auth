@@ -1,5 +1,4 @@
 import {Inject, Injectable} from '@angular/core';
-import {AppState} from '../../app/state';
 import {Subscription} from 'rxjs/Subscription';
 import {Store} from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';

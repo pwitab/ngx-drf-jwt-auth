@@ -73,6 +73,7 @@ export class BaseJWT {
       // try to find character in table (0-63, not found => -1)
       buffer = chars.indexOf(buffer);
     }
+
     return output;
   }
 
@@ -82,10 +83,18 @@ export class BaseJWT {
    * @param str
    * @returns {string}
    */
+
+
   private static b64DecodeUnicode(str: any) {
-    return decodeURIComponent(Array.prototype.map.call(JWT.b64decode(str), (c: any) => {
+    //TODO: is this really needed??
+    /*
+    return decodeURIComponent(
+        Array.prototype.map.call(JWT.b64decode(str), (c: any) => {
       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
     }).join(''));
+     */
+
+    return str
   }
 
   /**
@@ -143,7 +152,8 @@ export class BaseJWT {
     decoded = BaseJWT.decodeToken(token);
 
     if (!decoded.hasOwnProperty('exp')) {
-      return null;
+        let null_date = new Date(0);
+      return null_date;
     }
 
     let date = new Date(0); // The 0 here is the key, which sets the date to the epoch
