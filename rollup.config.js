@@ -38,10 +38,9 @@ export default {
                 'rxjs/operators/map': 'Rx',
                 'rxjs/operators': 'Rx',
                 'rxjs': 'Rx',
-
-                '@ngrx/store': 'node_modules/@ngrx/store/bundles/store.umd.js',
-                '@ngrx/effects': 'node_modules/@ngrx/effects/bundles/effects.umd.js',
-                '@ngrx/router-store': 'node_modules/@ngrx/router-store/bundles/router-store.umd.js',
+                '@ngrx/store': 'ngrx.store',
+                '@ngrx/effects': 'ngrx.effects',
+                '@ngrx/router-store': 'ngrx.routerStore',
             },
 
     }
