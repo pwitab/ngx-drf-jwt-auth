@@ -16,8 +16,6 @@ export class BaseJWT {
   /**
    * We want to use date objects and not strings. So the JWT should have a proper date object as expiration time. Using this fuction we can
    * convert Epoch seconds to Date.
-   * @param {number} timestamp
-   * @returns {Date}
    */
   public static dateFromTimestamp(timestamp: number): Date {
     let date = new Date(0); // The 0 here is the key, which sets the date to the epoch
@@ -27,8 +25,6 @@ export class BaseJWT {
 
   /**
    * Decoding of JWT
-   * @param {string} str
-   * @returns {string}
    */
   public static urlBase64Decode(str: string): string {
     let output = str.replace(/-/g, '+').replace(/_/g, '/');
@@ -46,8 +42,6 @@ export class BaseJWT {
   // credits for decoder goes to https://github.com/atk
   /**
    * Decoding of JWT
-   * @param {string} str
-   * @returns {string}
    */
   private static b64decode(str: string): string {
     let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
@@ -80,8 +74,6 @@ export class BaseJWT {
   // https://developer.mozilla.org/en/docs/Web/API/WindowBase64/Base64_encoding_and_decoding#The_Unicode_Problem
   /**
    * Decoding of JWT
-   * @param str
-   * @returns {string}
    */
 
 
@@ -99,7 +91,6 @@ export class BaseJWT {
 
   /**
    * Will return the decoded data of the JWT in JSON.
-   * @returns {JSON}
    */
   public decode(): JSON {
     return BaseJWT.decodeToken(this.token)
@@ -107,8 +98,6 @@ export class BaseJWT {
 
   /**
    * Returns true if JWT has expired. Also possible to add an offset so there is time to update the token.
-   * @param {number} offsetSeconds
-   * @returns {boolean}
    */
   public isExpired(offsetSeconds?: number): boolean {
     return BaseJWT.isTokenExpired(this.token, offsetSeconds)
@@ -116,7 +105,6 @@ export class BaseJWT {
 
   /**
    * Returns true if the token is still valid
-   * @returns {boolean}
    */
   public isValid(offsetSeconds?: number): boolean {
     return !this.isExpired(offsetSeconds)
@@ -124,8 +112,6 @@ export class BaseJWT {
 
   /**
    * Decode a JWT as JSON for an encoded JWT
-   * @param {string} token
-   * @returns {any}
    */
   public static decodeToken(token: string): any {
     let parts = token.split('.');
@@ -144,8 +130,6 @@ export class BaseJWT {
 
   /**
    * Return the expiration date for an encoded JWT
-   * @param {string} token
-   * @returns {Date}
    */
   public static getTokenExpirationDate(token: string): Date {
     let decoded: any;
@@ -164,9 +148,6 @@ export class BaseJWT {
 
   /**
    * Returns true if an encoded JWT is expired.
-   * @param {string} token
-   * @param {number} offsetSeconds
-   * @returns {boolean}
    */
   public static isTokenExpired(token: string, offsetSeconds?: number): boolean {
     let date = BaseJWT.getTokenExpirationDate(token);

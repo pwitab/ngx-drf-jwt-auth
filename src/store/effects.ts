@@ -110,7 +110,6 @@ export class DRFJWTAuthEffects {
 
   /**
    * An effect that will map logout to remove the token. So developers can hook up other events on logOut.
-   * @type {Observable<RemoveToken>}
    */
   @Effect()
   public  logOut$: Observable<Action> = this.actions$
@@ -124,7 +123,6 @@ export class DRFJWTAuthEffects {
   /**
    * A way to get an action after the app as inited to check if there is a valid token in local storage and set it in the state.
    * Also renew the token so that we have a fresh one.
-   * @type {Observable<any>}
    */
   @Effect({dispatch: false})
   public firstAction: Observable<Action> = this.actions$

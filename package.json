@@ -1,16 +1,14 @@
 {
-  "name": "ngx-drf-jwt-auth",
+  "name": "@pwitab/ngx-drf-jwt-auth",
   "version": "0.0.1",
   "description": "A Angular 5+ module for JWT token and auth management focused to work with Django REST Framework JWT implementation",
-  "main": "ngx-drf-jwt-auth.bundle.js",
-  "module": "ngx-drf-jwt-auth.module.js",
-  "jsnext:main": "ngx-drf-jwt-auth.module.js",
-  "types": "ngx-drf-jwt-auth.module.d.ts",
+  "ngPackage": {
+    "lib": {
+      "entryFile": "public_api.ts"
+    }},
   "scripts": {
-    "transpile": "ngc",
-    "package": "rollup -c",
-    "minify": "uglifyjs dist/bundles/drfjwtauth.umd.js --screw-ie8 --compress --mangle --comments --output dist/bundles/drfjwtauth.umd.min.js",
-    "build": "npm run transpile && npm run package && npm run minify",
+
+    "build": "ng-packagr -p package.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -31,8 +29,30 @@
     "url": "https://github.com/pwitab/ngx-drf-jwt-auth/issues"
   },
   "homepage": "https://github.com/pwitab/ngx-drf-jwt-auth#readme",
+  "peerDependencies": {
+    "@angular/common": "^5.2.3",
+    "@angular/core": "^5.2.3",
+    "@angular/forms": "^5.2.3",
+    "@angular/http": "^5.2.3",
+    "@angular/router": "^5.2.3",
+    "@ngrx/effects": "^5.0.1",
+    "@ngrx/router-store": "^5.0.1",
+    "@ngrx/store": "^5.0.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.5.6"
+  },
+  "dependencies": {
 
+  },
   "devDependencies": {
+    "bootstrap": "^4.0.0-beta.2",
+    "@ngrx/store-devtools": "^5.0.1",
+    "@angular/language-service": "^5.2.3",
+    "@angular/platform-browser": "^5.2.3",
+    "@angular/platform-browser-dynamic": "^5.2.3",
+    "@angular/compiler": "^5.2.3",
+    "@angular/compiler-cli": "^5.2.3",
+    "@angular/cli": "1.6.4",
     "@types/jasmine": "~2.8.3",
     "@types/jasminewd2": "~2.0.2",
     "@types/node": "~6.0.60",
@@ -52,27 +72,8 @@
     "awesome-typescript-loader": "^3.4.1",
     "clean-webpack-plugin": "^0.1.18",
     "rollup": "^0.55.3",
-    "tslint-loader": "^3.5.3"
-  },
-  "dependencies": {
-    "@angular/common": "^5.2.3",
-    "@angular/compiler": "^5.2.3",
-    "@angular/core": "^5.2.3",
-    "@angular/forms": "^5.2.3",
-    "@angular/http": "^5.2.3",
-    "@angular/platform-browser": "^5.2.3",
-    "@angular/platform-browser-dynamic": "^5.2.3",
-    "@angular/router": "^5.2.3",
-    "@ngrx/effects": "^5.0.1",
-    "@ngrx/entity": "^5.0.1",
-    "@ngrx/router-store": "^5.0.1",
-    "@ngrx/store": "^5.0.0",
-    "@ngrx/store-devtools": "^5.0.1",
-    "bootstrap": "^4.0.0-beta.2",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.5.6",
-    "@angular/cli": "1.6.4",
-    "@angular/compiler-cli": "^5.2.3",
-    "@angular/language-service": "^5.2.3"
+    "tslint-loader": "^3.5.3",
+    "ng-packagr": "^2.0.0"
   }
+
 }

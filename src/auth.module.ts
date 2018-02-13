@@ -3,15 +3,15 @@ import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {EffectsModule} from '@ngrx/effects';
-import {DRFJWTAuthEffects} from './src/store/effects';
+import {DRFJWTAuthEffects} from './store/effects';
 import {StoreModule} from '@ngrx/store';
 
-import {DRFJWTLoginFormComponent} from './src/components/loginform.component';
-import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './src/options';
-import {DrfJwtAuthInterceptor} from './src/auth.interceptor';
-import {CanActivateIfAuthenticated} from './src/guard.service';
-import {DRFJWTAuthService} from './src/auth.service';
-import {authReducer} from './src/store/reducers';
+import {DRFJWTLoginFormComponent} from './components/loginform.component';
+import {DRF_JWT_AUTH_OPTIONS, IDrfJwtAuthOptions} from './options';
+import {DrfJwtAuthInterceptor} from './auth.interceptor';
+import {CanActivateIfAuthenticated} from './guard.service';
+import {DRFJWTAuthService} from './auth.service';
+import {authReducer} from './store/reducers';
 
 @NgModule({
   declarations: [DRFJWTLoginFormComponent],
